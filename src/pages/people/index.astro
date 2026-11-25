@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const all = (await getCollection('people')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const current = all.filter((p) => !p.data.former);
+const former = all.filter((p) => p.data.former);
+---
+<Base title="People" description="Everyone at the sample center, by role and group.">
+  <h1>People</h1>
+  <ul class="cards">
+    {current.map((p) => (
+      <li><a href={`${base}/people/${p.id}/`}>{p.data.name}</a><div class="meta">{p.data.role}, {p.data.group}</div></li>
+    ))}
+  </ul>
+  {former.length > 0 && (
+    <>
+      <h2>Past members</h2>
+      <ul class="cards">{former.map((p) => <li>{p.data.name}<div class="meta">{p.data.role}</div></li>)}</ul>
+    </>
+  )}
+</Base>

@@ -1,0 +1,35 @@
+---
+const { title, description = 'A sample research center site used to test the publishing tools.', jsonld } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const nav = [['Home', '/'], ['People', '/people/'], ['News', '/news/'], ['Datasets', '/datasets/'], ['Publications', '/publications/']];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Sample Research Center</title>
+    <meta name="description" content={description} />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+    <style is:global>
+      body { font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif; margin: 0; color: #1f1f1f; background: #f2efec; line-height: 1.55; }
+      header, main, footer { max-width: 760px; margin: 0 auto; padding: 20px 24px; }
+      header { display: flex; flex-wrap: wrap; gap: 18px; align-items: baseline; border-bottom: 1px solid #cfc6ba; }
+      header strong { margin-right: auto; }
+      a { color: #4e5b46; }
+      h1 { font-size: 2rem; line-height: 1.15; letter-spacing: -0.02em; }
+      ul.cards { list-style: none; padding: 0; }
+      ul.cards li { padding: 12px 0; border-bottom: 1px solid #cfc6ba; }
+      .meta { color: #4a4a4a; font-size: 0.92rem; }
+      footer { color: #4a4a4a; font-size: 0.85rem; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Sample Research Center</strong>
+      {nav.map(([label, href]) => <a href={base + href}>{label}</a>)}
+    </header>
+    <main><slot /></main>
+    <footer>Test site with invented content. Built {new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC.</footer>
+  </body>
+</html>

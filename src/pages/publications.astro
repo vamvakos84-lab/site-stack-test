@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import publications from '../data/publications.json';
+---
+<Base title="Publications" description="Publications fetched from PubMed by a scheduled job.">
+  <h1>Publications</h1>
+  <p class="meta">Fetched from PubMed on {publications.fetched}. Search used: {publications.query}</p>
+  <ul class="cards">
+    {publications.items.map((p) => (
+      <li><a href={`https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/`}>{p.title}</a><div class="meta">{p.authors} · {p.journal} · {p.date}</div></li>
+    ))}
+  </ul>
+</Base>

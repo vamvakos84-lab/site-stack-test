@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const datasets = await getCollection('datasets');
+  return datasets.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const jsonld = { '@context': 'https://schema.org', '@type': 'Dataset', name: entry.data.name, description: entry.data.summary, url: entry.data.where };
+---
+<Base title={entry.data.name} description={entry.data.summary} jsonld={jsonld}>
+  <p class="meta"><a href={`${base}/datasets/`}>Datasets</a></p>
+  <h1>{entry.data.name}</h1>
+  <p>{entry.data.summary}</p>
+  <p><a href={entry.data.where}>Where to get it</a></p>
+  <Content />
+</Base>

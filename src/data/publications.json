@@ -1,0 +1,63 @@
+{
+  "query": "neurogenomics[Title]",
+  "fetched": "2026-11-25",
+  "total": 58,
+  "items": [
+    {
+      "pmid": "42938353",
+      "title": "15th Anniversary of Genes: Advances and Perspectives in Neurogenetics and Neurogenomics.",
+      "authors": "Ricci C",
+      "journal": "Genes",
+      "date": "2026 Oct 8"
+    },
+    {
+      "pmid": "42501820",
+      "title": "Genetically predicted breastfeeding propensity and brain microstructural morphology: Insights from genome-wide association study summary statistics and neurogenomics.",
+      "authors": "Peng W, Zheng L, Huo F and 3 others",
+      "journal": "Clinical nutrition ESPEN",
+      "date": "2026 Oct"
+    },
+    {
+      "pmid": "42792921",
+      "title": "AI-Guided Systems Neurogenomics in Neurodevelopmental Disorders.",
+      "authors": "Goel H, Dudding-Byth T, Kamien B",
+      "journal": "Genes",
+      "date": "2026 Aug 28"
+    },
+    {
+      "pmid": "42114168",
+      "title": "Emerging Topics in Neurogenomics: Summary From Inaugural Child Neurology Society Genetics Summit.",
+      "authors": "Sen K, Gottlieb-Smith R, Amin S and 23 others",
+      "journal": "Pediatric neurology",
+      "date": "2026 Jul"
+    },
+    {
+      "pmid": "41527206",
+      "title": "Black EquaLity in OCD NeuroGenomics (BELONG): Study Protocol.",
+      "authors": "Williams IJ, Marquez DY, Lopez-Lengowski KE and 17 others",
+      "journal": "American journal of medical genetics. Part B, Neuropsychiatric genetics : the official publication of the International Society of Psychiatric Genetics",
+      "date": "2026 Apr"
+    },
+    {
+      "pmid": "41717632",
+      "title": "An integrative neurogenomics workflow for precision medicine in neurodegenerative disorders.",
+      "authors": "Perezcano C, Pérez-Coria M",
+      "journal": "Frontiers in dementia",
+      "date": "2026"
+    },
+    {
+      "pmid": "41534496",
+      "title": "Recent advances in the neurogenomics of autism spectrum disorder.",
+      "authors": "Gogate A, Chahrour MH",
+      "journal": "Current opinion in genetics & development",
+      "date": "2026 Feb"
+    },
+    {
+      "pmid": "41542697",
+      "title": "Black EquaLity in OCD NeuroGenomics (BELONG): Study Protocol.",
+      "authors": "Williams IJ, Marquez DY, Lopez-Lengowski KE and 17 others",
+      "journal": "medRxiv : the preprint server for health sciences",
+      "date": "2026 Jan 9"
+    }
+  ]
+}

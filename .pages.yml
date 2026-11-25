@@ -1,0 +1,52 @@
+# The forms that Pages CMS shows. One entry per kind of card.
+media:
+  input: public/media
+  output: /media
+content:
+  - name: news
+    label: News and events
+    type: collection
+    path: src/content/news
+    format: yaml-frontmatter
+    filename: '{year}-{month}-{day}-{primary}.md'
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: link, label: Link (optional), type: string }
+      - { name: body, label: Text, type: rich-text }
+  - name: people
+    label: People
+    type: collection
+    path: src/content/people
+    format: yaml-frontmatter
+    filename: '{primary}.md'
+    view:
+      primary: name
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string, required: true }
+      - name: group
+        label: Group
+        type: select
+        options:
+          values: [Data Integration, Single Cell, Administration]
+      - { name: photo, label: Photo, type: image }
+      - { name: former, label: Past member, type: boolean }
+      - { name: body, label: About, type: rich-text }
+  - name: datasets
+    label: Datasets
+    type: collection
+    path: src/content/datasets
+    format: yaml-frontmatter
+    filename: '{primary}.md'
+    view:
+      primary: name
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: summary, label: What it is (one sentence), type: text, required: true }
+      - { name: where, label: Where to get it (web address), type: string, required: true }
+      - { name: body, label: Longer description, type: rich-text }
